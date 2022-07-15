@@ -1,0 +1,1 @@
+helm install psql-local bitnami/postgresql --set persistence.existingClaim=postgresql-pv-claim --set volumePermissions.enable=true

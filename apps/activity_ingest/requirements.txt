@@ -1,0 +1,5 @@
+pika
+basic-rec-utilities
+sqlalchemy
+numpy
+psycopg2

@@ -1,0 +1,26 @@
+create table movies_metadata (
+    id      INT     PRIMARY KEY     NOT NULL,
+    adult                     BOOLEAN,
+    -- belongs_to_collection     object
+    budget                    BIGINT,
+    -- genres                    object,
+    homepage                  TEXT,
+    imdb_id                   TEXT,
+    original_language         TEXT,
+    original_title            TEXT,
+    overview                  TEXT,
+    popularity                FLOAT,
+    -- poster_path               object,
+    -- production_companies      object,
+    -- production_countries      object,
+    release_date              TEXT,
+    revenue                  FLOAT,
+    runtime                  FLOAT,
+    -- spoken_languages          object,
+    status                    TEXT,
+    -- tagline                   object,
+    title                     TEXT,
+    -- video                     object,
+    vote_average             FLOAT,
+    vote_count               FLOAT
+)

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: activity-ingest
+spec:
+  selector:
+    matchLabels:
+      app: activity-ingest
+  template:
+    metadata:
+      labels:
+        app: activity-ingest
+    spec:
+      containers:
+      - name: activity-ingest
+        image: activity-ingest:latest
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        env:
+          - name: RECS_MQ_USER
+            value: 'activity_ingest_svc'
+          - name: RECS_MQ_PWD
+            value: 'basic_password'
+          - name: RECS_DB_HOST
+            value: 'psql-local-postgresql.default.svc.cluster.local'
+          - name: RECS_DB_PWD
+            value: 'basic_password'
